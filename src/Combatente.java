@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class Combatente {
 	String nome;
 	int vida;
@@ -7,8 +9,6 @@ public class Combatente {
 		this.nome = nome;
 		this.vida = vida;
 	}
-	
-	
 	
 	
 	public int vidaTotal() {
@@ -29,7 +29,12 @@ public class Combatente {
 		}
 	}
 	
+	public int calcularAtaque() {
+		Random random = new Random();
+		int ataque = random.nextInt(10);
+		return ataque;
+		
+	}
+	
 
 }
-
-
