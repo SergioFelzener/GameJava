@@ -1,6 +1,6 @@
 import java.util.Random;
 
-public class Combatente {
+public abstract class Combatente {
 	String nome;
 	int vida;
 	boolean vivo;
