@@ -84,7 +84,6 @@ public class Luta {
 
 		}
 
-		// Rodando infinito...
 
 	}
 	
