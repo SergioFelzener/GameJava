@@ -9,4 +9,8 @@ public class Player {
         this.deck = deck;
     }
 
+    public int howManyCards(){
+        return this.deck.cards.size();
+    }
+
 }
