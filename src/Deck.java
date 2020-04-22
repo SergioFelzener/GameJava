@@ -12,11 +12,27 @@ public class Deck {
     
     public List<Combatente> getCards() {
         return this.cards;
+
     }
 
-    public Combatente removeCard(int index ){
-        this.cards.remove(index);
-        return this.cards.get(index);
+    // Método para pegar a quantidade de Cards
+    public int getDeckSize(){
+        return this.cards.size();
+
+    }
+
+    // Método para pegar as cartas mortas do Deck
+    public void removeDeadCard(){
+
+        for(int i = 0; i < this.getDeckSize(); i++){
+
+            Combatente card = this.getCards().get(i);
+
+            if(!card.vivo){
+                this.cards.remove(i);
+            }
+
+        }
         
     }
 

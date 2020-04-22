@@ -13,53 +13,54 @@ public class Luta {
 	
 	public void startFight() {
 		
+		// Decidindo na moeda virtual quem começa (true = player 1, false = player 2)
 		boolean caraOuCoroa = jogarMoeda();
+
+		// começando a Fight
 		this.fight(caraOuCoroa);
+
+		// Checando o vencedor
 		this.checkDeckCards(player1, player2);
 		
 	}
 
 	public void fight(boolean moeda) {
 		
-		// Se o cara ou coroa der 1 (Player 1 começa batendo)
+		// Se o cara ou coroa der 1 (Player 1 começa batendo) (REFATORAR*)
 		if(moeda) {	
-			while(player1.howManyCards() > 0 && player2.howManyCards() > 0 ) {
+			// Enquanto os jogadores tiverem Cards vivas, eles vão lutar
+			while(player1.howManyCardsAlive() > 0 && player2.howManyCardsAlive() > 0 ) {
 
-				// Player pega 1 Card e luta contra Card do Player 2
-				Combatente card1 = player1.deck.cards.get(1);
-				Combatente card2 = player2.deck.cards.get(1);
+				// loop no Deck, pega uma carta e Luta (1 v 1)
+				for(int i = 0; i < player1.deck.getDeckSize(); i++){
+					Combatente card1 = player1.deck.getCards().get(i);
+					Combatente card2 = player2.deck.getCards().get(i);
+					this.porradas(card1, card2);
 
-				this.porradas(card1, card2);
-		
-				// Se o Card morreu, ele será removido do Deck
-				if(!card1.vivo()){
-					player1.deck.cards.remove(0);
-
-				}else{
-					player2.deck.cards.remove(0);
-
-				}
+				}		
+				
+				// Limpa as Cards mortas do Deck
+				player1.deck.removeDeadCard();
+				player2.deck.removeDeadCard();
 				
 			}		
 			
 		}else {
-			while(player1.howManyCards() > 0 && player2.howManyCards() > 0 ) {
+			// Enquanto os jogadores tiverem Cards vivas, eles vão lutar
+			while(player1.howManyCardsAlive() > 0 && player2.howManyCardsAlive() > 0 ) {
 
-				// Player pega 1 Card e luta contra Card do Player 1
-				Combatente card1 = player2.deck.cards.get(0);
-				Combatente card2 = player1.deck.cards.get(0);
-
-				this.porradas(card2, card1);
-
-				// Se o Card morreu, ele será removido do Deck
-				if(!card1.vivo()){
-					player1.deck.cards.remove(0);
-
-				}else{
-					player2.deck.cards.remove(0);
+				// loop no Deck, pega uma carta e Luta (1 v 1)
+				for(int i = 0; i < player1.deck.getDeckSize(); i++){
+				Combatente card1 = player2.deck.getCards().get(i);
+				Combatente card2 = player1.deck.getCards().get(i);
+				this.porradas(card1, card2);
 
 				}
-				
+
+				// Limpa as Cards mortas do Deck
+				player1.deck.removeDeadCard();
+				player2.deck.removeDeadCard();
+
 			}	
 	
 		}	
@@ -68,25 +69,35 @@ public class Luta {
 
 	public void porradas(Combatente card1, Combatente card2){
 
+		// Enquanto os Cards estão vivos , eles descem a porrada (REFATORAR*)
 		while(card1.vivo() && card2.vivo()){
 
 			// Combatente Card 1
 			int danoCard1 = card1.calcularAtaque();
 			card1.subtrairVida(danoCard1);
-			System.out.println("O " + card1.nome + "sofreu: " + danoCard1 + " de dano");
+			System.out.println("O " + card1.nome + " sofreu: " + danoCard1 + " de dano");
 			System.out.println(card1.nome + " vida total: " + card1.vidaTotal());
 			
 			//Combatente Card 2
 			int danoCard2 = card2.calcularAtaque();
 			card2.subtrairVida(danoCard2);
-			System.out.println("O" + card2 + "sofreu: " + danoCard2 + " de dano");
-			System.out.println(card2 + " vida total: " + card2.vidaTotal());
+			System.out.println("O " + card2.nome + " sofreu: " + danoCard2 + " de dano");
+			System.out.println(card2.nome + " vida total: " + card2.vidaTotal());
 
 		}
 
+		// Se o Card morrer, envia uma mensagem no terminal
+		if(!card1.vivo()){
+			System.out.println("Card " + card1.nome + " morreu");
+						
+		}else{
+			System.out.println("Card " + card2.nome + " morreu");
+						
+		}
 
 	}
 	
+	// Decisão randômica para o inicio da batalha
 	public boolean jogarMoeda() {
 		
 		Random random = new Random();
@@ -96,22 +107,21 @@ public class Luta {
 			return true;
 		}else {
 			return false;
-		}	
-		
+		}		
 		
 	}	
 	
-	// Adaptar para checar cards existentes (if(< 0) Player perde)
+	// Verifica quem quem venceu por possuir o ultimo card vivo (REFATORAR*)
 	public void checkDeckCards(Player player1, Player player2) {
 		
-		if(player1.howManyCards() > 0 && player2.howManyCards() < 1 ) {
-			System.out.println("O Player 1 venceu!");
-		}else {
-			System.out.println("O Player 2 venceu!");
+		if(player1.howManyCardsAlive() > 0 && player2.howManyCardsAlive() < 1 ) {
+			System.out.println("O Player " + player1.nome + " venceu!");
+
+		}else{
+				System.out.println("O Player " + player2.nome + " venceu!");
+
+			}
+			
 		}
 		
-	}
-	
-	
 }
-	
