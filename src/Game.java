@@ -50,7 +50,7 @@ public class Game {
 		// Criando o Player 1 com o Nome obtido e o Deck criado
 		Player player1 = new Player(player1Name, deckPlayer1);
 
-		System.out.println(player1.nome + " Criado!");
+		System.out.printf("Criado player %s\n", player1);
 
 
 		// PLAYER 2 --------------------------------------------------------
@@ -93,7 +93,7 @@ public class Game {
 		// Criando o Player 1 com o Nome obtido e o Deck criado
 		Player player2 = new Player(player2Name, deckPlayer2);
 		
-		System.out.println(player2.nome + " Criado!");
+		System.out.printf("%s Criado\n", player2);
 
 		// Fechando o Scanner ;)
 		scanner.close();
