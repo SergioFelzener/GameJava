@@ -3,11 +3,7 @@ package game;
 import game.combatentes.Combatente;
 
 public class RunPlay extends Play {
-	
-	Player play = new Player("Teste");
-	
-	
-	
+		
 	Sweepstakes drawFight = new Sweepstakes();
 
 	public Combatente battle(int sorteado, Combatente combatente1, Combatente combatente2) throws InterruptedException {
