@@ -30,7 +30,7 @@ public class RunPlay extends Play {
 				}
 				System.out.printf("** Player 1 - %s ** Attack POWER (%.1f)\n", combatente1.getName(), attack);
 				System.out.printf("** Player 2 - %s ** Defendeu (%.1f) seu ataque foi de (%.1f)\n", combatente2.getName(),valorDefesa, valorAttack);
-				System.out.printf(" --==> BELA DEFESA <==-- \nReduziu o ataque em %.1f pontos.\n\n", valorDefesa );
+				System.out.printf(" --==> BELA DEFESA <==-- \nReduziu o ataque em %.1f pontos.\n", valorDefesa );
 				combatente2.receberAtaque(defesa);
 			}
 			System.out.println("-----------------------------------------------------------");
@@ -45,7 +45,7 @@ public class RunPlay extends Play {
 				combatente1.receberAtaque(valorAtaque);
 			} else {
 				System.out.printf("** Player 2 - %s Attack POWER (%.1f) **\n", combatente2.getName(), valorAtaque);
-				System.out.printf("** Player 1 - %s Defendeu (%.1f)\n", combatente1.getName(), defendeu);
+				System.out.printf("** Player 1 - %s Defendeu ()\n", combatente1.getName());
 				System.out.printf("** Player 1 - %s Defendeu ** \n", combatente1.getName());
 				combatente1.receberAtaque(1);
 			}
