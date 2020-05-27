@@ -4,10 +4,10 @@ import java.util.Random;
 
 public class Sweepstakes {
 	
-	private Random rand = new Random();
+	private Random random = new Random();
 
 	public int drawPlayers() {
-		int player = rand.nextInt(2);
+		int player = random.nextInt(2);
 		
 		if (player == 0) {
 			player = 1;
@@ -18,13 +18,13 @@ public class Sweepstakes {
 	}
 
 	public int attackRandom(int valor) {
-		int ataque = rand.nextInt(valor);
+		int ataque = random.nextInt(valor);
 
 		return ataque;
 	}
 
 	public boolean defesaRandom() {
-		int sort = rand.nextInt();
+		int sort = random.nextInt(1);
 
 		if (sort == 0) {
 			return true;

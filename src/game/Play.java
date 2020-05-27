@@ -3,8 +3,6 @@ package game;
 import java.util.Map;
 import java.util.Scanner;
 
-import javax.swing.JOptionPane;
-
 import game.combatentes.Combatente;
 
 public class Play {
