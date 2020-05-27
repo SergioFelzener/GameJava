@@ -11,15 +11,13 @@ public class EntradasDeSistema {
 	
 	// instanciando Factory Combatentes
 	FactoryCombatente deck = new FactoryCombatente();
-	Play play = new Play();
-	
 	
 	Scanner entrada = new Scanner(System.in);
 
 	public Map<Integer, Combatente> cards = new HashMap<>();
 
 //	Método de seleção de combatentes para o Deck do usuário
-	public Map<Integer, Combatente> selectCards(int player) {
+	public Map<Integer, Combatente> selectCards(String player) {
 		int card = 0;
 		
 		
@@ -28,7 +26,7 @@ public class EntradasDeSistema {
 		while (card < 2) {
 			System.out.println();
 			System.out.println("-------------------------------");
-			System.out.println("Player "+ player + " Escolha a " + (card + 1) + "˚ Carta :\n(1) - ORC \n(2) - Human");
+			System.out.println(player + " Escolha a " + (card + 1) + "˚ Carta :\n(1) - ORC \n(2) - Human");
 			System.out.println("-------------------------------");
 			int opcao = entrada.nextInt();
 			Combatente combatente = deck.selectCombatente(opcao);
@@ -40,9 +38,11 @@ public class EntradasDeSistema {
 		return cards;
 	}
 	
-	public int selectCard(int jogador, Map<Integer, Combatente> deck) {
+	public int selectCard(String player, Map<Integer, Combatente> deck) {
+		
+		int cards = 0;
 
-		System.out.printf("Escolha sua Carta Player%d\n\n", jogador);
+		System.out.printf("%s Escolha sua carta para o COMBATE :  \n\n", player);
 
 		for (Map.Entry<Integer, Combatente> item : deck.entrySet()) {
 			if (item.getValue().isAlive()) {
@@ -50,6 +50,7 @@ public class EntradasDeSistema {
 			}
 		}
 
+		cards++;
 		int changeCard = (entrada.nextInt() -1);
 		return changeCard;
 	}

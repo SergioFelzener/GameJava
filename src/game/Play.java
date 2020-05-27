@@ -38,13 +38,13 @@ public class Play {
 
 		EntradasDeSistema entradaSistema = new EntradasDeSistema();
 	
-		Map<Integer, Combatente> playerCards1 = entradaSistema.selectCards(1);
-		Map<Integer, Combatente> playerCards2 = entradaSistema.selectCards(2);
+		Map<Integer, Combatente> player1Cards = entradaSistema.selectCards(player1.getName());
+		Map<Integer, Combatente> player2Cards = entradaSistema.selectCards(player2.getName());
 		
 //		System.out.println("cartas : " + playerCards1);
 //		System.out.println("cartas : " + playerCards2);
 		
-		Fight fight = new Fight(playerCards1, playerCards2);
+		Fight fight = new Fight(player1.getName(), player1Cards, player2.getName(),player2Cards);
 		fight.startFight();
 		
 	entrada.close();
