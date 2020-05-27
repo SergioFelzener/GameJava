@@ -49,14 +49,14 @@ public class Combatente {
 		
 		return false;
 	}
-	public void receberAtaque(double dano) {
+	public void receberAtaque(double valor) {
 		if (desviaAtaque()) {
-			System.out.println(this.name + " desviou do ataque.");
+			System.out.println(this.name + " desviou");
 		} else {
-			if (dano > life) {
+			if (valor > life) {
 				life = 0;
 			} else {
-				life -= dano;
+				life -= valor;
 			}
 		}
 	}
