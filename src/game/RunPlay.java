@@ -2,17 +2,23 @@ package game;
 
 import game.combatentes.Combatente;
 
-public class RunPlay {
+public class RunPlay extends Play {
+	
+	Player play = new Player("Teste");
+	
+	
 	
 	Sweepstakes drawFight = new Sweepstakes();
 
 	public Combatente battle(int sorteado, Combatente combatente1, Combatente combatente2) throws InterruptedException {
 		toBattle(sorteado, combatente1, combatente2);
 		return getVencedor(combatente1, combatente2);
+		
 	}
 
 	private void toBattle(int sorteado, Combatente combatente1, Combatente combatente2) throws InterruptedException {
 		// Criando Logica de Ataque 
+	
 		if (sorteado == 1) {
 			double attack = drawFight.attackRandom(combatente1.getPower());
 			boolean defende = drawFight.defesaRandom();

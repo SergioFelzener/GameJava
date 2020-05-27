@@ -3,6 +3,8 @@ package game;
 import java.util.Map;
 import java.util.Scanner;
 
+import javax.swing.JOptionPane;
+
 import game.combatentes.Combatente;
 
 public class Play {
@@ -15,6 +17,10 @@ public class Play {
 		System.out.println("*********************");
 		System.out.println();
 		
+		
+		
+//		String player1 = JOptionPane.showInputDialog("Digite player 1 ");
+//		String player2 = JOptionPane.showInputDialog("Digite player 2 ");
 		// Iniciando Game recebendo o nome dos players
 		Scanner entrada = new Scanner(System.in);
 		System.out.print("Olá Player 1 - Digite seu nome : ");
