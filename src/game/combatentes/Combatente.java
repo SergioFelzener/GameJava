@@ -50,7 +50,7 @@ public class Combatente {
 		return false;
 	}
 	public void receberAtaque(double valor) {
-		if (desviaAtaque()) {
+		if (this.desviaAtaque()) {
 			System.out.println(this.name + " desviou");
 		} else {
 			if (valor > life) {

@@ -4,10 +4,6 @@ public class Player {
 	
 	public String name;
 	
-	public Player() {
-		
-	}
-	
 	public Player(String name) {
 		this.name = name;
 	}
@@ -21,11 +17,5 @@ public class Player {
 		return toString();
 	}
 
-	
-	
-	
-
-	
-	
 
 }
