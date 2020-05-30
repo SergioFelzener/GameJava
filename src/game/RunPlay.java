@@ -32,6 +32,7 @@ public class RunPlay extends Play {
 				System.out.printf("** Player 2 - %s ** Defendeu (%.1f) seu ataque foi de (%.1f)\n", combatente2.getName(),valorDefesa, valorAttack);
 				System.out.printf(" --==> BELA DEFESA <==-- \nReduziu o ataque em %.1f pontos.\n", valorDefesa );
 				combatente2.receberAtaque(defesa);
+				Thread.sleep(200);
 			}
 			System.out.println("-----------------------------------------------------------");
 			System.out.printf("%s Life = %s\n", combatente1.getName(), combatente1.getLife());
@@ -49,6 +50,7 @@ public class RunPlay extends Play {
 				System.out.printf("** Player 1 - %s Defendeu ** \n", combatente1.getName());
 				combatente1.receberAtaque(1);
 			}
+			Thread.sleep(200);
 			System.out.printf("%s Life = %s\n", combatente1.getName(), combatente1.getLife());
 			System.out.printf("%s Life = %s\n\n", combatente2.getName(), combatente2.getLife());
 
@@ -62,6 +64,5 @@ public class RunPlay extends Play {
 			return combatente2;
 		}
 	}
-	//Thread.sleep(500);
 
 }
