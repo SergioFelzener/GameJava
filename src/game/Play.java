@@ -3,6 +3,8 @@ package game;
 import java.util.Map;
 import java.util.Scanner;
 
+import javax.swing.JOptionPane;
+
 import game.combatentes.Combatente;
 
 public class Play {
@@ -20,11 +22,10 @@ public class Play {
 //		String player1 = JOptionPane.showInputDialog("Digite player 1 ");
 //		String player2 = JOptionPane.showInputDialog("Digite player 2 ");
 		// Iniciando Game recebendo o nome dos players
-		Scanner entrada = new Scanner(System.in);
 		System.out.print("Olá Player 1 - Digite seu nome : ");
-		Player player1 = new Player(entrada.next());
+		Player player1 = new Player(JOptionPane.showInputDialog("Player 1 digite seu Nome : "));
 		System.out.print("Olá Player 2 - Digite seu nome : ");
-		Player player2 = new Player(entrada.next());
+		Player player2 = new Player(JOptionPane.showInputDialog("Player 2 digite seu Nome : "));
 		
 		System.out.println("-------------------------------\n");
 		System.out.println("************************");
@@ -34,6 +35,7 @@ public class Play {
 		System.out.printf("Player1 - %s\n", player1.getName());
 		System.out.printf("Player2 - %s\n", player2.getName());
 
+		Scanner entrada = new Scanner(System.in);
 		EntradasDeSistema entradaSistema = new EntradasDeSistema();
 	
 		Map<Integer, Combatente> player1Cards = entradaSistema.selectCards(player1.getName());
