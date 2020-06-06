@@ -1,11 +1,14 @@
 package game.combatentes;
 
+import game.armas.Arma;
+
 public class Combatente {
 	
 	String name;
 	int life;
 	int power;
 	int defesa;
+ 	Arma arma;
 	
 	public Combatente(String name, int life, int power) {
 		this.name = name;
@@ -35,6 +38,10 @@ public class Combatente {
 
 	public void setPower(int power) {
 		this.power = power;
+	}
+
+	public void setArma(Arma arma) {
+		this.arma = arma;
 	}
 
 	@Override

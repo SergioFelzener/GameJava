@@ -1,12 +1,21 @@
 package game.armas;
 
-public class Arma {
+public abstract class Arma {
 
     String name;
-    int power;
+    int powerUp;
     
-    public Arma(String name, int power){
-        this.power = power;
+    public Arma(String name, int powerUp){
+        this.powerUp = powerUp;
         this.name = name;
     }
+
+    public int getPower() {
+        return this.powerUp;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
 }

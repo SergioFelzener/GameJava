@@ -1,4 +1,6 @@
-package game.armas;
+package game.armas.Espada;
+
+import game.armas.Arma;
 
 public class Espada extends Arma {
 
@@ -6,7 +8,4 @@ public class Espada extends Arma {
 		super("Espada", 5);
 	}
 
-    public int getPower() {
-        return this.power;
-    }
 }
