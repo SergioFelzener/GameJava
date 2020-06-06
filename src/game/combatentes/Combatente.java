@@ -1,6 +1,9 @@
 package game.combatentes;
 
 import game.Tipo;
+import game.armaduras.Armadura;
+import game.armas.Arma;
+import game.artefatos.Artefato;
 
 public class Combatente {
 	
@@ -9,8 +12,9 @@ public class Combatente {
 	int power;
 	int defesa;
 	Tipo tipo;
-	
-	
+	Arma arma;
+	Armadura armadura;
+	Artefato artefato;
 	
 	public Combatente(String name, int life, int power, Tipo tipo) {
 		this.name = name;
@@ -20,7 +24,7 @@ public class Combatente {
 	}
 
 	public String getName() {
-		return name;
+		return this.name;
 	}
 
 	public void setName(String name) {
@@ -28,7 +32,7 @@ public class Combatente {
 	}
 
 	public int getLife() {
-		return life;
+		return (this.life + this.artefato.getPower());
 	}
 
 	public void setLife(int life) {
@@ -36,11 +40,35 @@ public class Combatente {
 	}
 
 	public int getPower() {
-		return power;
+		return (this.power + this.arma.getPower());
 	}
 
 	public void setPower(int power) {
 		this.power = power;
+	}
+
+	public void setArma(Arma arma) {
+		this.arma = arma;
+	}
+
+	public void setArmadura(Armadura armadura){
+		this.armadura = armadura;
+	}
+
+	public void setArtefato(Artefato artefato){
+		this.artefato = artefato;
+	}
+
+	public int getDefesa() {
+		return (this.defesa + this.armadura.getDefense());
+	}
+
+	public Tipo getTipo() {
+		return this.tipo;
+	}
+
+	public void setTipo(Tipo tipo) {
+		this.tipo = tipo;
 	}
 
 	@Override
@@ -56,7 +84,7 @@ public class Combatente {
 		return false;
 	}
 	public void receberAtaque(double valor) {
-		if (desviaAtaque()) {
+		if (this.desviaAtaque()) {
 			System.out.println(this.name + " desviou");
 		} else {
 			if (valor > life) {
@@ -69,21 +97,7 @@ public class Combatente {
 	
 	protected boolean desviaAtaque() {
 		return false;
-	}
-	
-	public int getDefesa() {
-		return this.defesa;
-	}
-
-	public Tipo getTipo() {
-		return tipo;
-	}
-
-	public void setTipo(Tipo tipo) {
-		this.tipo = tipo;
-	}
-	
-	
+	}	
 	
 	
 }
