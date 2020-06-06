@@ -1,4 +1,4 @@
-# GameJava
+# RPG Card Game
 Criação de jogo de combate de cartas.
 
 ## Sobre o Game
