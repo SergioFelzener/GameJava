@@ -1,5 +1,6 @@
 package game.combatentes;
 
+import game.Tipo;
 import game.armas.Arma;
 
 public class Combatente {
@@ -8,12 +9,15 @@ public class Combatente {
 	int life;
 	int power;
 	int defesa;
+	Tipo tipo;
  	Arma arma;
 	
-	public Combatente(String name, int life, int power) {
+	
+	public Combatente(String name, int life, int power, Tipo tipo) {
 		this.name = name;
 		this.life = life;
 		this.power = power;
+		this.tipo = tipo;
 	}
 
 	public String getName() {
@@ -33,7 +37,7 @@ public class Combatente {
 	}
 
 	public int getPower() {
-		return power;
+		return (power + this.arma.getPower());
 	}
 
 	public void setPower(int power) {
@@ -75,6 +79,15 @@ public class Combatente {
 	public int getDefesa() {
 		return this.defesa;
 	}
+
+	public Tipo getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(Tipo tipo) {
+		this.tipo = tipo;
+	}
+	
 	
 	
 	

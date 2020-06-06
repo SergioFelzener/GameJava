@@ -73,7 +73,7 @@ public class EntradasDeSistema {
 		
 		int cards = 0;
 
-		System.out.printf("% Escolha sua carta para o COMBATE :  \n\n", player);
+		System.out.printf("%s Escolha sua carta para o COMBATE :  \n\n", player);
 
 		for (Map.Entry<Integer, Combatente> item : deck.entrySet()) {
 			if (item.getValue().isAlive()) {
