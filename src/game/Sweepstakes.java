@@ -12,7 +12,7 @@ public class Sweepstakes {
 		if (player == 0) {
 			player = 1;
 		} else {
-			player =2;
+			player = 2;
 		}
 		return player;
 	}
@@ -24,9 +24,9 @@ public class Sweepstakes {
 	}
 
 	public boolean defesaRandom() {
-		int sort = random.nextInt(1);
+		int defesa = random.nextInt(2);
 
-		if (sort == 0) {
+		if (defesa == 1) {
 			return true;
 		} else {
 			return false;
