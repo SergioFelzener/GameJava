@@ -22,9 +22,9 @@ public class Play {
 //		String player1 = JOptionPane.showInputDialog("Digite player 1 ");
 //		String player2 = JOptionPane.showInputDialog("Digite player 2 ");
 		// Iniciando Game recebendo o nome dos players
-		System.out.print("Olá Player 1 - Digite seu nome : ");
+		//System.out.print("Olá Player 1 - Digite seu nome : ");
 		Player player1 = new Player(JOptionPane.showInputDialog("Player 1 digite seu Nome : "));
-		System.out.print("Olá Player 2 - Digite seu nome : ");
+		//System.out.print("Olá Player 2 - Digite seu nome : ");
 		Player player2 = new Player(JOptionPane.showInputDialog("Player 2 digite seu Nome : "));
 		
 		System.out.println("-------------------------------\n");
