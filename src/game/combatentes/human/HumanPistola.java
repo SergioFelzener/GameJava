@@ -1,9 +1,11 @@
 package game.combatentes.human;
 
-public class HumanPistola extends Human {
-	
-	public HumanPistola() { 
-		super ("Pacato Cidadão", 100, 11);
-	}
+import game.Tipo;
 
+public class HumanPistola extends Human {
+
+	public HumanPistola() {
+		super("Pacato Cidadão", 100, 11, Tipo.AR);
+
+	}
 }
