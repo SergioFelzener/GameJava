@@ -23,7 +23,7 @@ Faça o Clone do projeto:
 
 ```
 
-Para rodar o Game basta dar o run no arquivo Play.java
+Para rodar o Game basta dar Run no arquivo Play.java
 
 ## Desenvolvedores 
 - [**_Vinicius Savegnago_**](https://github.com/savegdesigner)
