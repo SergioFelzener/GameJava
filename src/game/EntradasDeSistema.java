@@ -31,7 +31,7 @@ public class EntradasDeSistema {
 		
 		cards = new HashMap<>();
 
-		while (card < 1) {
+		while (card < 5) {
 			System.out.println();
 			System.out.println("-------------------------------------------------------------------------------------------");
 			System.out.println(player + " Escolha a " + (card + 1) + "˚ Carta :\n"
