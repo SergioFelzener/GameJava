@@ -27,4 +27,4 @@ Para rodar o Game basta dar o run no arquivo Play.java
 
 ## Desenvolvedores 
 - [**_Vinicius Savegnago_**](https://github.com/savegdesigner)
-- [** Sérgio Felzener_**](https://github.com/SergioFelzener)
+- [**_Sérgio Felzener_**](https://github.com/SergioFelzener)
